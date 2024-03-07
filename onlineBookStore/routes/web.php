@@ -27,6 +27,10 @@ Route::get('/account', function () {
     return view('account');
 });
 
+Route::get('/books', function () {
+    return view('Book');
+});
+
 // Route::get('/addBooks', function () {
 //     return view('booklist');
 // });

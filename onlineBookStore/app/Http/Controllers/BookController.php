@@ -12,7 +12,8 @@ class BookController extends Controller
      */
     public function index()
     {
-        return "Login success";
+        $books = Book::paginate(3);
+        return view('Book' ,compact('books'));
     }
 
     /**
