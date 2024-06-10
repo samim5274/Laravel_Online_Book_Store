@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2024 at 02:20 PM
+-- Generation Time: Jun 10, 2024 at 02:53 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -50,7 +50,13 @@ INSERT INTO `books` (`id`, `name`, `image`, `price`, `qty`, `is_active`, `create
 (11, 'TWO SIDE', '/images/uploads/book-17097240981.PNG', 120, 12, 1, '2024-03-06 05:21:38', '2024-03-06 05:21:38'),
 (12, 'SWORD', '/images/uploads/book-17097241251.PNG', 350, 12, 1, '2024-03-06 05:22:05', '2024-03-06 05:22:05'),
 (13, 'HARTS AGLOW', '/images/uploads/book-17097243341.PNG', 230, 34, 1, '2024-03-06 05:25:34', '2024-03-06 05:25:34'),
-(14, 'STATISTIC INNOVOCATION', '/images/uploads/book-17097308161.PNG', 980, 50, 1, '2024-03-06 07:13:36', '2024-03-06 07:13:36');
+(14, 'STATISTIC INNOVOCATION', '/images/uploads/book-17097308161.PNG', 980, 50, 1, '2024-03-06 07:13:36', '2024-03-06 07:13:36'),
+(15, 'LOVE', '/images/uploads/book-17098054221.PNG', 150, 120, 1, '2024-03-07 03:57:02', '2024-03-07 03:57:02'),
+(16, 'SOUL', '/images/uploads/book-17180130431.PNG', 400, 12, 1, '2024-06-10 03:50:43', '2024-06-10 03:50:43'),
+(17, 'Math', '/images/uploads/book-17180130561.PNG', 330, 13, 1, '2024-06-10 03:50:56', '2024-06-10 03:50:56'),
+(18, 'Statigic Innovation', '/images/uploads/book-17180130901.PNG', 200, 12, 1, '2024-06-10 03:51:30', '2024-06-10 03:51:30'),
+(19, '2023', '/images/uploads/book-17180131131.PNG', 200, 12, 1, '2024-06-10 03:51:53', '2024-06-10 03:51:53'),
+(20, 'Black Mood', '/images/uploads/book-17180131311.PNG', 780, 23, 1, '2024-06-10 03:52:11', '2024-06-10 03:52:11');
 
 -- --------------------------------------------------------
 
@@ -148,7 +154,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `mobail`, `username`, `email_verified_at`, `password`, `is_active`, `is_admin`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'samim', 'samim@gmail.com', '0192383', 'samim', NULL, 's', NULL, 0, NULL, NULL, NULL);
+(1, 'samim', 'samim@gmail.com', '0192383', 'samim', NULL, 's', NULL, 0, NULL, NULL, NULL),
+(2, 'Muhiminul Islam', 'm@gmail.com', '12312', 'muhiminul', NULL, 'm', NULL, 0, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -203,7 +210,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -227,7 +234,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -65,7 +65,7 @@
             @foreach($returnBook as $book)
                 <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
                     <div class="card text-center mt-2">
-                        <a href="/account"><img class="card-img-top" src="{{asset($book['image'])}}" alt="Card image cap"></a>
+                        <a href="/book-list"><img class="card-img-top" src="{{asset($book['image'])}}" alt="Card image cap"></a>
                         <div class="card-body">
                             <!-- <h5 class="card-title mb-0">{{$book['name']}}</h5> -->
                             <a href="/account">{{$book['name']}}</a>

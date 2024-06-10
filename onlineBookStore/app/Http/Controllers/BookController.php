@@ -12,8 +12,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = Book::paginate(3);
-        return view('Book' ,compact('books'));
+        //
     }
 
     /**
@@ -110,5 +109,38 @@ class BookController extends Controller
         }
 
         return view('booklist', compact('returnBook'));
+    }
+
+    public function showBook()
+    {
+        $bookslist = Book::paginate(12);
+        return view('Book',compact('bookslist'));
+    }
+
+    public function ViewBookDetail($id)
+    {
+        $bookDetails = Book::find($id);
+        $images = explode('|', $bookDetails->image);
+        return view('ViewBookDetails', compact('bookDetails','images'));
+    }
+
+    public function addtocart($id)
+    {
+        $Book = Book::find($id);
+
+        $cart = session()->get('cart');
+        
+        $cart[$id] = [
+            "id" => $Book->id,
+            "name" => $Book->name,
+            "qty" => $Book->qty,
+            "price" => $Book->price,
+            "image" => $Book->image
+        ];
+   
+        session()->put('cart', $cart); 
+   
+        return redirect()->back()->with('success', 'Product added to cart successfully!');
+    
     }
 }
