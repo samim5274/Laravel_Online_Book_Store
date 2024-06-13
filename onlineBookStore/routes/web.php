@@ -42,3 +42,8 @@ Route::get('/addBooks','App\Http\Controllers\BookController@addBooks');
 Route::get('/books-details/{id}','App\Http\Controllers\BookController@ViewBookDetail');
 
 Route::get('/books-cart/{id}','App\Http\Controllers\BookController@addtocart');
+
+Route::get('/cart-details', 'App\Http\Controllers\BookController@cardDetail');
+
+Route::get('/remove-item-from-cart', 'App\Http\Controllers\BookController@remove');
+

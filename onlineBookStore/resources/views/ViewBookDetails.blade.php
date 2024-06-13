@@ -129,7 +129,7 @@
                     <a href="{{ url('/books-cart/'.$bookDetails->id) }}"><button type="submit" class="btnCart">Add cart</button></a>
                     </div>
                     <div class="col span_1_of_2">
-                        <a href="#"><button>Go Cart</button></a>
+                        <a href="/cart-details"><button>Go Cart</button></a>
                     </div>
                 </div>
             </div>
@@ -146,11 +146,6 @@
     </div>
 </section>
 
-<div>
-    @if(asset(session()->has('success')))
-    <p>{{ session()->get('success') }}</p>
-    @endif
-</div>
 
 <script>
 function openImg(imgName) {

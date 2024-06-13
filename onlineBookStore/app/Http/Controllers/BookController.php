@@ -81,7 +81,13 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        //
+        if($request->id and $request->quantity)
+        {
+            $cart = session()->get('cart');
+            $cart[$request->id]["quantity"] = $request->quantity;
+            session()->put('cart', $cart);
+            session()->flash('success', 'Cart updated successfully');
+        }
     }
 
     /**
@@ -128,14 +134,18 @@ class BookController extends Controller
     {
         $Book = Book::find($id);
 
+        $returnBook = array();
+
         $cart = session()->get('cart');
-        
+
+        $images = explode('|' , $Book->image);
+
         $cart[$id] = [
             "id" => $Book->id,
             "name" => $Book->name,
             "qty" => $Book->qty,
             "price" => $Book->price,
-            "image" => $Book->image
+            "image" => $images[0]
         ];
    
         session()->put('cart', $cart); 
@@ -143,4 +153,10 @@ class BookController extends Controller
         return redirect()->back()->with('success', 'Product added to cart successfully!');
     
     }
+
+    public function cardDetail()
+    {
+        return view('cart');
+    }
+
 }
