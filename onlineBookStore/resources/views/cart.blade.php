@@ -41,7 +41,7 @@
                         <td>{{ $qty = $details['qty'] }}</td>
                         <td>{{ $details['price'] * $details['qty'] }}</td>
                         <td>
-                            <a href="/remove-item-from-cart"><button class="btn btn-warning remove-from-cart"><i class="material-icons" style="color:red">delete</i></button></a>
+                            <button class="btn btn-warning remove-from-cart"><i class="material-icons" style="color:red">delete</i></button>
                         </td>
                     </tr> 
                     @endforeach
